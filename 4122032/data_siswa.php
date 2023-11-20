@@ -24,10 +24,10 @@ include "koneksi.php";
                 <?php
                 $no =1;
                 $query = mysqli_query($koneksi, "SELECT * FROM data_siswa");
-                while ($data = mysqli_fetch_array($query));
+                while ($data = mysqli_fetch_array($query)){
                 ?>
                 <tr>
-                    <td><?php echo $no ++;?></td>
+                    <td> <?php echo $no ++;?> </td>
                     <td><?php echo $data ['nama_siswa'];?></td>
                     <td><?php echo $data ['alamat_siswa'];?></td>
                     <td><?php echo $data ['agama_siswa'];?></td>
@@ -37,6 +37,9 @@ include "koneksi.php";
                         <a href="">Edit</a> <a href="">Hapus</a>
                     </td>
                 </tr>
+                <?php
+                }
+                ?>
             </table>
         </body>
 </html>
